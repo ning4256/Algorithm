@@ -1,7 +1,5 @@
 package com.github.ning4256;
 
-
-
 public class Array {
 	private int[] data; // 定义了一个名叫data的数组
 	private int size; // size用于记录数组里面的个数
@@ -12,7 +10,7 @@ public class Array {
 		size = 0; // 0个元素
 	}
 
-	//	无参的构造函数
+	// 无参的构造函数
 	public Array() {
 		this(10);
 	}
@@ -73,6 +71,62 @@ public class Array {
 		data[index] = e;
 	}
 
+	// 查找数组是否含有元素e
+	public boolean contains(int e) {
+		for (int i = 0; i < data.length; i++) {
+			if (data[i] == e) {
+				return true;
+			}
+		}
+		return false;
+	}
+
+	// 查找数组中e的下标
+	public int finds(int e) {
+		for (int i = 0; i < data.length; i++) {
+			if (data[i] == e) {
+				return i;
+			}
+		}
+		return -1;
+	}
+
+	// 从数组中删除索引为index的元素，并返回这个元素
+	public int remove(int index) {
+		if (index < 0 || index > size) {
+			throw new IllegalArgumentException("remove failed,please input right index!");
+		}
+		int res = data[index];
+		for (int i = index + 1; i < size; i++) {
+			data[i - 1] = data[i];
+		}
+		size--;
+		return res;
+	}
+
+	// 删除头部
+	public int removeFirst() {
+		return remove(0);
+	}
+
+	// 删除尾部
+	public int removeLast() {
+		return remove(size - 1);
+	}
+
+	// 删除某个元素
+	public void removeElement(int e) {
+		boolean flag = contains(e);
+		if (!flag) {
+			throw new IllegalArgumentException("removeElement failed,Array don't contain e!");
+		}
+		int index = finds(e);
+		if (index != -1) {
+			remove(index);
+		}
+	}
+
+	//打印这个数组	
 	@Override
 	public String toString() {
 		StringBuilder res = new StringBuilder();
