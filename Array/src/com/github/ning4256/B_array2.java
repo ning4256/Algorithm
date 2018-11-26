@@ -4,16 +4,16 @@ public class B_array2 {
 	private int[] data;
 	private int size;
 
-
-	 无参构造函数
+	// 无参构造函数
 
 	// 构造函数，传入数组的容量capacity构造
-	public B_array2(int capacity) {
+	B_array2(int capacity) {
 		data = new int[capacity];
 		size = 0;
 	}
+
 	public B_array2() {
-			this(10);
+		this(10);
 	}
 
 	// 获取数组中的元素个数

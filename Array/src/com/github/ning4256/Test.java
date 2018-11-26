@@ -4,7 +4,7 @@ public class Test {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		Array arr = new Array(20);
+		Array<Integer> arr = new Array<Integer>(20);
 		System.out.println(arr);
 
 		arr.insert(0, 1);
