@@ -100,7 +100,7 @@ public class BST<E extends Comparable<E>> {
 	}
 
 	// 遍历所有元素
-	// 1.前序遍历
+	// 1.前序遍历(NLR)
 	public void preOrder() {
 		preOrder(root);
 	}
@@ -111,6 +111,32 @@ public class BST<E extends Comparable<E>> {
 		System.out.println(node.e);
 		preOrder(node.left);
 		preOrder(node.right);
+	}
+
+	// 2.中序遍历(LNR)
+	public void inOrder() {
+		inOrder(root);
+	}
+
+	private void inOrder(BST<E>.Node node) {
+		if (node == null)
+			return;
+		inOrder(node.left);
+		System.out.println(node.e);
+		inOrder(node.right);
+	}
+	// 3.后序遍历(LRN)
+	public void lastOrder() {
+		lastOrder(root);
+	}
+
+	private void lastOrder(BST<E>.Node node) {
+		if(node == null)
+			return;
+		lastOrder(node.left);
+		lastOrder(node.right);
+		System.out.println(node.e);
+		
 	}
 
 	@Override

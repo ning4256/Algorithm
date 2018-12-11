@@ -7,7 +7,9 @@ public class Test {
 		for (int i : nums) {
 			bst.add(i);
 		}
-		bst.preOrder();
+//		bst.preOrder();
+//		bst.inOrder();
+		bst.lastOrder();
 		System.out.println();
 		System.out.println(bst);
 //		System.out.println(bst.contains(8));
